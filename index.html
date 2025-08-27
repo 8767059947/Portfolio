@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veer Pardeshi - Full-Stack Developer | AI-Powered Web Platforms</title>
+    <meta name="description" content="Veer Pardeshi - Full-Stack Developer from Pune specializing in AI-powered web platforms, React, Node.js, and modern web technologies. Available for freelance projects." />
+    <meta name="author" content="Veer Pardeshi" />
+    <meta name="keywords" content="full-stack developer, AI integration, React developer, Node.js, Pune developer, web development, freelance" />
+
+    <meta property="og:title" content="Veer Pardeshi - Full-Stack Developer | AI-Powered Web Platforms" />
+    <meta property="og:description" content="Full-Stack Developer specializing in AI-powered web platforms, React, Node.js, and modern web technologies. Building intelligent, scalable solutions." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=1200" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:image" content="https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=1200" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <style>
+        :root {
+            --background: #0A192F;
+            --foreground: #CCD6F6;
+            --primary: #64FFDA;
+            --muted: #8892B0;
+            --light-slate: #A8B2D1;
+            --card-bg: rgba(17, 34, 64, 0.8);
+            --border-color: rgba(100, 255, 218, 0.1);
+            --shadow-color: rgba(2, 12, 27, 0.7);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--background);
+            color: var(--foreground);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .bg-grid {
+            background-image: 
+                linear-gradient(rgba(100, 255, 218, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(100, 255, 218, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary) 0%, #a77dff 50%, var(--primary) 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 4s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+        }
+
+        .hover-lift {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px -10px var(--shadow-color);
+        }
+
+        #navigation {
+            background: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        #navigation.scrolled {
+            box-shadow: 0 10px 30px -10px var(--shadow-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo { font-weight: 800; font-size: 1.5rem; }
+
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 12px 28px; border-radius: 8px; font-weight: 600;
+            font-family: 'Fira Code', monospace; font-size: 14px;
+            transition: all 0.25s ease;
+        }
+
+        .btn-primary { background: var(--primary); color: var(--background); }
+        .btn-primary:hover { background: rgba(100, 255, 218, 0.85); transform: translateY(-3px); }
+
+        .btn-outline { border: 1px solid var(--primary); color: var(--primary); }
+        .btn-outline:hover { background: rgba(100, 255, 218, 0.1); transform: translateY(-3px); }
+
+        .nav-link { font-family: 'Fira Code', monospace; font-size: 13px; color: var(--muted); }
+        .nav-link:hover { color: var(--primary); }
+        .nav-number { color: var(--primary); }
+
+        .hero-title { font-size: clamp(2.5rem, 8vw, 5rem); }
+        .hero-subtitle { font-size: clamp(2rem, 6vw, 4rem); }
+
+        .timeline-line {
+            position: absolute; left: 1rem; top: 0; bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary) 0%, transparent 80%);
+        }
+
+        .timeline-dot {
+            position: absolute; left: calc(1rem - 11px); top: 0.5rem;
+            width: 24px; height: 24px; border-radius: 50%;
+            background: var(--background); border: 3px solid var(--primary);
+            box-shadow: 0 0 15px rgba(100, 255, 218, 0.5);
+        }
+
+        .tech-tag {
+            background: rgba(100, 255, 218, 0.1); color: var(--primary);
+            padding: 4px 12px; border-radius: 20px;
+            font-family: 'Fira Code', monospace; font-size: 12px;
+        }
+
+        .fade-in {
+            opacity: 0; transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        
+        .loading-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--background); display: flex; align-items: center;
+            justify-content: center; z-index: 9999; transition: opacity 0.5s ease;
+        }
+        .loading-spinner {
+            width: 50px; height: 50px; border: 3px solid var(--border-color);
+            border-top-color: var(--primary); border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .contact-btn-glow {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-btn-glow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(100, 255, 218, 0.15) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    animation: pulse 4s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+}
+
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    </style>
+</head>
+
+<body class="bg-grid">
+    <div class="loading-overlay" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <nav id="navigation" class="fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#home" class="logo gradient-text">VP</a>
+
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#about" class="nav-link"><span class="nav-number">01.</span> About</a>
+                <a href="#experience" class="nav-link"><span class="nav-number">02.</span> Experience</a>
+                <a href="#projects" class="nav-link"><span class="nav-number">03.</span> Projects</a>
+                <a href="#contact" class="nav-link"><span class="nav-number">04.</span> Contact</a>
+                <a href="assets/Resume_Final (9).pdf" target="_blank" class="btn btn-outline ml-4">Resume</a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-[var(--primary)]">
+                <i data-lucide="menu" class="h-6 w-6"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-[var(--light-navy)] px-6 pb-6">
+             <div class="flex flex-col items-center space-y-6 pt-6 border-t border-[var(--border-color)]">
+                <a href="#about" class="mobile-nav-link nav-link">01. About</a>
+                <a href="#experience" class="mobile-nav-link nav-link">02. Experience</a>
+                <a href="#projects" class="mobile-nav-link nav-link">03. Projects</a>
+                <a href="#contact" class="mobile-nav-link nav-link">04. Contact</a>
+                <a href="/assets/Resume_Final (9).pdf" target="_blank" class="btn btn-outline w-full text-center">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6">
+        <section id="home" class="min-h-screen flex items-center justify-start pt-24">
+            <div class="max-w-3xl fade-in">
+                <p class="text-base text-[var(--primary)] mb-6 font-mono">Hi, my name is</p>
+                <h1 class="hero-title text-[var(--foreground)] font-extrabold">Veer Pardeshi.</h1>
+                <h2 class="hero-subtitle text-[var(--muted)] font-bold">I build intelligent web platforms.</h2>
+                <p class="text-lg text-[var(--muted)] mt-8 leading-relaxed">
+                    I'm a full-stack developer specializing in creating scalable, AI-powered web solutions. I transform complex problems into intuitive digital experiences using React, Node.js, and modern AI integrations.
+                </p>
+                <div class="mt-12">
+                    <a href="#projects" class="btn btn-primary">Check out my work!</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-32">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 flex items-center gap-4 fade-in">
+                    <span class="gradient-text font-mono text-2xl">01.</span>
+                    <span class="text-[var(--foreground)]">About Me</span>
+                    <div class="flex-1 h-px bg-[var(--border-color)] ml-4"></div>
+                </h2>
+                <div class="grid lg:grid-cols-5 gap-12 items-start">
+                    <div class="lg:col-span-3 space-y-4 text-lg text-[var(--light-slate)] fade-in">
+                        <p>Hello! I'm Veer, a dedicated developer based in Pune. My fascination with technology began with a simple "Hello, World!" and has since evolved into a passion for building robust applications that solve real-world problems.</p>
+                        <p>My expertise lies in the <span class="text-[var(--primary)]">MERN stack</span>, but my true passion is at the intersection of web development and <span class="text-[var(--primary)]">Artificial Intelligence</span>. I love integrating AI to create smarter user experiences.</p>
+                        <ul class="grid grid-cols-2 gap-x-6 gap-y-2 text-sm font-mono mt-4">
+                            <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="h-4 w-4 text-[var(--primary)]"></i>JavaScript (ES6+)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="h-4 w-4 text-[var(--primary)]"></i>React & Next.js</li>
+                            <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="h-4 w-4 text-[var(--primary)]"></i>Node.js & Express</li>
+                            <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="h-4 w-4 text-[var(--primary)]"></i>MongoDB & SQL</li>
+                        </ul>
+                    </div>
+                    <div class="lg:col-span-2 flex justify-center fade-in" style="transition-delay: 200ms;">
+                        <div class="relative w-72 h-72 group">
+    <div class="absolute inset-0 rounded-lg bg-[var(--primary)] transition-transform duration-300 group-hover:translate-x-3 group-hover:translate-y-3"></div>
+    <div class="relative w-full h-full rounded-lg overflow-hidden border-2 border-[var(--primary)]">
+        <img 
+            src="assets/Profile.jpg" 
+            alt="A photo of Veer Pardeshi" 
+            class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+        >
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-32">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-16 flex items-center gap-4 fade-in">
+                    <span class="gradient-text font-mono text-2xl">02.</span>
+                    <span class="text-[var(--foreground)]">Work Experience</span>
+                    <div class="flex-1 h-px bg-[var(--border-color)] ml-4"></div>
+                </h2>
+                <div class="relative">
+                    <div class="timeline-line"></div>
+                    <div class="relative pl-12 pb-12 fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="glass-card hover-lift p-6">
+                            <h3 class="text-xl font-bold text-[var(--foreground)]">Frontend Developer Trainee</h3>
+                            <p class="text-[var(--primary)] font-semibold mb-2">Devskillhub <span class="text-[var(--muted)] font-normal">(AICTE Internship)</span></p>
+                            <p class="text-sm text-[var(--muted)] font-mono mb-4">Jan 2024 - Mar 2024 · Remote</p>
+                            <ul class="space-y-2 text-[var(--light-slate)] text-sm">
+                                <li class="flex items-start gap-3"><i data-lucide="arrow-right" class="w-4 h-5 text-[var(--primary)] flex-shrink-0"></i>Developed a fully responsive web application, focusing on component reusability and modern frontend practices.</li>
+                                <li class="flex items-start gap-3"><i data-lucide="arrow-right" class="w-4 h-5 text-[var(--primary)] flex-shrink-0"></i>Utilized Git for version control in a collaborative environment, enhancing team workflow.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="relative pl-12 fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="glass-card hover-lift p-6">
+                            <h3 class="text-xl font-bold text-[var(--foreground)]">Independent Developer</h3>
+                            <p class="text-[var(--primary)] font-semibold mb-2">Personal Projects & Learning</p>
+                            <p class="text-sm text-[var(--muted)] font-mono mb-4">2023 - Present · Pune, India</p>
+                             <ul class="space-y-2 text-[var(--light-slate)] text-sm">
+                                <li class="flex items-start gap-3"><i data-lucide="arrow-right" class="w-4 h-5 text-[var(--primary)] flex-shrink-0"></i>Engineered and deployed multiple full-stack applications with integrated AI APIs for intelligent features.</li>
+                                <li class="flex items-start gap-3"><i data-lucide="arrow-right" class="w-4 h-5 text-[var(--primary)] flex-shrink-0"></i>Solved over 100 Data Structures and Algorithms challenges on platforms like LeetCode.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-32">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 flex items-center gap-4 fade-in">
+                    <span class="gradient-text font-mono text-2xl">03.</span>
+                    <span class="text-[var(--foreground)]">Featured Projects</span>
+                    <div class="flex-1 h-px bg-[var(--border-color)] ml-4"></div>
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="glass-card hover-lift p-6 flex flex-col fade-in">
+                        <div class="flex-grow">
+                            <div class="flex justify-between items-center mb-4">
+                                <i data-lucide="brain-circuit" class="w-10 h-10 text-[var(--primary)]"></i>
+                                <div class="flex gap-3 text-2xl">
+                                    <a href="https://github.com/8767059947/Mindmesh.AI" target="_blank" rel="noopener noreferrer" class="text-[var(--muted)] hover:text-[var(--primary)]"><i data-lucide="github"></i></a>
+                                    <a href="https://mindmesh-ai-lime.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-[var(--muted)] hover:text-[var(--primary)]"><i data-lucide="external-link"></i></a>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold text-[var(--foreground)] mb-2">Mindmesh.AI</h3>
+                            <p class="text-[var(--muted)] text-sm leading-relaxed">AI-powered SaaS platform with Gemini AI integration, featuring secure authentication and cloud storage for content creation.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4"><span class="tech-tag">React</span><span class="tech-tag">Node.js</span><span class="tech-tag">Gemini AI</span>
+                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">Neon</span>
+                        </div>
+                    </div>
+                    <div class="glass-card hover-lift p-6 flex flex-col fade-in" style="transition-delay: 150ms;">
+                        <div class="flex-grow">
+                            <div class="flex justify-between items-center mb-4">
+                                <i data-lucide="zap" class="w-10 h-10 text-[var(--primary)]"></i>
+                                <div class="flex gap-3 text-2xl">
+                                    <a href="https://github.com/8767059947/Quickblog" target="_blank" rel="noopener noreferrer" class="text-[var(--muted)] hover:text-[var(--primary)]"><i data-lucide="github"></i></a>
+                                    <a href="https://quickblog-mu.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-[var(--muted)] hover:text-[var(--primary)]"><i data-lucide="external-link"></i></a>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold text-[var(--foreground)] mb-2">Quickblog</h3>
+                            <p class="text-[var(--muted)] text-sm leading-relaxed">A full-stack AI blogging platform built with the MERN stack. Features AI-assisted content writing and a rich text editor.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4"><span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Gemini AI</span>
+                        </div>
+                    </div>
+                    <div class="glass-card hover-lift p-6 flex flex-col fade-in" style="transition-delay: 300ms;">
+                        <div class="flex-grow">
+                             <div class="flex justify-between items-center mb-4">
+                                <i data-lucide="activity" class="w-10 h-10 text-[var(--primary)]"></i>
+                                <div class="flex gap-3 text-2xl">
+                                    <a href="https://github.com/8767059947/Internship" target="_blank" rel="noopener noreferrer" class="text-[var(--muted)] hover:text-[var(--primary)]"><i data-lucide="github"></i></a>
+                                    <a href="https://8767059947.github.io/Internship/#" target="_blank" rel="noopener noreferrer" class="text-[var(--muted)] hover:text-[var(--primary)]"><i data-lucide="external-link"></i></a>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold text-[var(--foreground)] mb-2">Health Up+</h3>
+                            <p class="text-[var(--muted)] text-sm leading-relaxed">An interactive BMI calculator with health recommendations. Persists data using Local Storage.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">JavaScript</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section id="contact" class="py-32">
+    <div class="max-w-xl mx-auto text-center fade-in">
+        <p class="text-base text-[var(--primary)] font-mono mb-4">04. What's Next?</p>
+        <h2 class="text-4xl font-bold text-[var(--foreground)] mb-6">Let's Build Something Great</h2>
+        <p class="text-lg text-[var(--muted)] mb-10">
+            I'm currently seeking new opportunities and am always excited to connect with fellow developers and potential collaborators. Whether you have a project in mind, a question, or just want to say hello, my inbox is always open.
+        </p>
+        
+        <a href="mailto:pardeshiveer007@gmail.com" class="btn btn-primary contact-btn-glow inline-block mb-12">
+            Say Hello
+        </a>
+
+        <div class="flex justify-center items-center gap-8">
+            <a href="https://github.com/8767059947" target="_blank" rel="noopener noreferrer" class="p-2 text-[var(--muted)] hover:text-[var(--primary)] hover:-translate-y-1 transition-transform">
+                <i data-lucide="github" class="w-6 h-6"></i>
+            </a>
+            <a href="https://linkedin.com/in/veer-pardeshi" target="_blank" rel="noopener noreferrer" class="p-2 text-[var(--muted)] hover:text-[var(--primary)] hover:-translate-y-1 transition-transform">
+                <i data-lucide="linkedin" class="w-6 h-6"></i>
+            </a>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <footer class="py-8">
+        <div class="container mx-auto text-center text-[var(--muted)] text-sm">
+             <div class="flex justify-center gap-6 mb-4 md:hidden">
+                <a href="https://github.com/8767059947" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--primary)]"><i data-lucide="github"></i></a>
+                <a href="https://linkedin.com/in/veer-pardeshi" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--primary)]"><i data-lucide="linkedin"></i></a>
+            </div>
+            <p class="font-mono">Designed & Built by Veer Pardeshi</p>
+        </div>
+    </footer>
+    
+    <div class="hidden md:flex flex-col items-center fixed bottom-0 left-10 z-10">
+        <a href="https://github.com/8767059947" target="_blank" rel="noopener noreferrer" class="p-2 text-[var(--muted)] hover:text-[var(--primary)] hover:-translate-y-1 transition-transform"><i data-lucide="github" class="w-5 h-5"></i></a>
+        <a href="https://linkedin.com/in/veer-pardeshi" target="_blank" rel="noopener noreferrer" class="p-2 text-[var(--muted)] hover:text-[var(--primary)] hover:-translate-y-1 transition-transform"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+        <div class="h-24 w-px bg-[var(--muted)] mt-2"></div>
+    </div>
+     <div class="hidden md:flex flex-col items-center fixed bottom-0 right-10 z-10">
+        <a href="mailto:pardeshiveer007@gmail.com" class="font-mono text-sm tracking-widest [writing-mode:vertical-rl] p-2 text-[var(--muted)] hover:text-[var(--primary)] hover:-translate-y-1 transition-transform">pardeshiveer007@gmail.com</a>
+        <div class="h-24 w-px bg-[var(--muted)] mt-2"></div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+
+            // Loading screen
+            const loadingOverlay = document.getElementById('loading');
+            setTimeout(() => {
+                loadingOverlay.style.opacity = '0';
+                setTimeout(() => loadingOverlay.style.display = 'none', 500);
+            }, 500);
+
+            // Mobile menu
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            });
+
+            // Nav scroll effect
+            const navigation = document.getElementById('navigation');
+            window.addEventListener('scroll', () => {
+                navigation.classList.toggle('scrolled', window.scrollY > 50);
+            });
+
+            // Scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
